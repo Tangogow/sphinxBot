@@ -6,14 +6,15 @@ Sphinx allows **multiple IP surveys**. May not be the case in the future.
 
 ## Table of content
 
-1. [Description](#desc)
-2. [Dependencies](#deps)
-3. [Getting started](#start)
+1. [Description](#description)
+2. [Dependencies](#dependencies)
+3. [Getting started](#getting-started)
 4. [Example](#example)
-5. [Input types](#input)
-6. [Troubleshooting](#trouble)
+5. [Inputs types](#inputs-types)
+6. [Troubleshooting](#troubleshooting)
+7. [Code explanation](#code-explanation)
+8. [Todo](#todo)
 
-<a href="desc"></a>
 ## Description
 
 You have to set the URL of your Sphinx survey, then add manually all the field and the scripts gonna get a random value in between the provided interval. For random word field questions, you'll have to create a list with all the wanted words. (random names, email, answers etc)
@@ -26,7 +27,6 @@ You'll see a high number between 8 and 10 digits very recurring in the current s
 
 Repeat the right click operation for each question.
 
-<a href="deps"></a>
 ## Dependencies
 
 - [Mechanize](https://pypi.org/project/mechanize/) 0.4.5
@@ -37,23 +37,22 @@ pip install mechanize
 
 Tested in python 2.7 and 3.6.
 
-<a href="start"></a>
 ## Getting started
 
 1. Fill up the config file `config.py` with your parameters: URL, numbers of surveys, number of time needed by each and time between each survey filling.
 
-2. ```bash
+2. 
+
+```bash
 python sphinxBot.py
 # OR
 chmod +x sphinxBot.py && ./sphinxBot.py
 ```
 
-<a href="example"></a>
 ## Example
 
 Have a look in `sphinxBot.py`.
 
-<a href="input"></a>
 ## Inputs types
 
 ```python
@@ -93,7 +92,6 @@ if form['<parent id>'] == ['1']:
 
 Assuming your questions settings are configured as your **Yes** stands in first position. (therefore the `['1']`)
 
-<a href="trouble"></a>
 ## Troubleshooting
 
 If you messed up a control, it will send you as response the survey page with the error at the top.
@@ -111,7 +109,6 @@ If anything is okay, it will send you the **Thanks message**, and your survey wi
 You either entered the wrong URL or wrong control ID.
 Enable the `debugHTML` varialbe to see what's going on.
 
-<a href="code"></a>
 ## Code explanation
 
 #### Input response
